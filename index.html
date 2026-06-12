@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nai - Premium Lando-Style Bento</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="video-background">
+        <video autoplay loop muted playsinline id="bg-video">
+            <source src="bg-video.mp4" type="video/mp4">
+        </video>
+        <div class="bg-overlay"></div>
+    </div>
+
+    <div class="lando-wrapper">
+
+        <div class="accordion-panel active" id="panel-career">
+            <div class="accordion-trigger" onclick="switchPanel('career')">
+                <span class="trigger-tag">01 // DEV & CODE</span>
+                <h2>IN MY CAREER</h2>
+                <div class="status-indicator">🟢 ACTIVE</div>
+            </div>
+            
+            <div class="panel-body">
+                <div class="bento-grid-mesh">
+                    
+                    <div class="bento-card span-2 highlight-card">
+                        <div class="border-glow"></div>
+                        <div class="card-inner">
+                            <h1 class="glitch-text" data-text="NAI">NAI</h1>
+                            <p class="subtitle-text">Informatics Student & Competitive Programmer</p>
+                        </div>
+                        <span class="card-index">INFO</span>
+                    </div>
+
+                    <div class="bento-card neon-red">
+                        <div class="border-glow"></div>
+                        <div class="card-inner">
+                            <div class="platform-head"><i class="fab fa-codeforces"></i> CODEFORCES</div>
+                            <div class="big-rating">1724</div>
+                            <div class="rank-title">Expert Tier</div>
+                        </div>
+                        <span class="card-index">CF</span>
+                    </div>
+
+                    <div class="bento-card">
+                        <div class="border-glow"></div>
+                        <div class="card-inner">
+                            <div class="platform-head"><i class="fas fa-trophy"></i> PLATFORMS</div>
+                            <div class="mini-list">
+                                <p>🏆 LQDOJ: <span>250+ Solved</span></p>
+                                <p>⚡ LeetCode: <span>Knight Rank</span></p>
+                            </div>
+                        </div>
+                        <span class="card-index">AC</span>
+                    </div>
+
+                    <div class="bento-card span-2">
+                        <div class="border-glow"></div>
+                        <div class="card-inner">
+                            <div class="tech-grid">
+                                <div class="tech-item"><i class="fab fa-js"></i><span>JS</span></div>
+                                <div class="tech-item"><i class="fab fa-node-js"></i><span>Node.js</span></div>
+                                <div class="tech-item"><i class="fab fa-python"></i><span>Python</span></div>
+                                <div class="tech-item-cpp"><span>C++</span></div>
+                            </div>
+                        </div>
+                        <span class="card-index">CORE STACK</span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-panel collapsed" id="panel-personal">
+            <div class="accordion-trigger" onclick="switchPanel('personal')">
+                <span class="trigger-tag">02 // LIFE & VIBES</span>
+                <h2>IN MY PERSONAL</h2>
+                <div class="status-indicator">🎵 PLAYING</div>
+            </div>
+            
+            <div class="panel-body">
+                <div class="bento-grid-mesh">
+
+                    <div class="bento-card">
+                        <div class="border-glow"></div>
+                        <div class="card-inner center-flex">
+                            <img src="https://avatars.githubusercontent.com/u/87489040?v=4" alt="Avatar" class="premium-avatar">
+                            <div class="social-row-blur">
+                                <a href="#"><i class="fab fa-facebook"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-discord"></i></a>
+                            </div>
+                        </div>
+                        <span class="card-index">VISUAL</span>
+                    </div>
+
+                    <div class="bento-card span-2">
+                        <div class="border-glow"></div>
+                        <div class="card-inner justify-center">
+                            <div class="brand-sub">NAI // TWENTY-TWO</div>
+                            <blockquote class="poetic-quote">"Looking at the starry sky, listening to Yorushika, and writing clean code."</blockquote>
+                        </div>
+                        <span class="card-index">VIBE</span>
+                    </div>
+
+                    <div class="bento-card span-3 spotify-premium-box">
+                        <div class="border-glow"></div>
+                        <div class="card-inner audio-engine-layout">
+                            
+                            <div id="playlist-window" class="glass-playlist">
+                                <div class="playlist-header">TRACKLIST</div>
+                                <ul id="playlist-tracks"></ul>
+                            </div>
+
+                            <audio id="core-audio"></audio>
+                            
+                            <div class="player-left-deck">
+                                <div class="vinyl-wrap">
+                                    <img src="https://static.wikia.nocookie.net/jpop/images/5/58/Yorushika_Nininshou.png" alt="Cover" class="vinyl-disk" id="disk-image">
+                                    <div class="vinyl-center"></div>
+                                </div>
+                                <div class="song-meta">
+                                    <h4 id="song-title">Early Morning, Mailbox</h4>
+                                    <p>Yorushika</p>
+                                </div>
+                            </div>
+
+                            <div class="player-right-controls">
+                                <div class="deck-row">
+                                    <button class="icon-control-btn"><i class="fas fa-random"></i></button>
+                                    <button id="play-trigger" class="master-play-btn"><i id="play-icon" class="fas fa-play"></i></button>
+                                    <button id="list-trigger" class="icon-control-btn"><i class="fas fa-list-ul"></i></button>
+                                </div>
+                                <div class="timeline-slider-deck">
+                                    <span class="time-stamp" id="current-time">0:00</span>
+                                    <div class="track-timeline-bg" id="timeline-seek">
+                                        <div class="track-timeline-fill" id="timeline-fill"></div>
+                                    </div>
+                                    <span class="time-stamp" id="total-duration">0:00</span>
+                                </div>
+                            </div>
+
+                        </div>
+                        <span class="card-index">SOUND STATION</span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
